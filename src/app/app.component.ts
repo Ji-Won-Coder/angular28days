@@ -9,16 +9,21 @@ export class AppComponent {
   cities =['tokyo','seul','rokugara'];
     name!:string;
     title = ` hola mundo c:`
-  seletion: string | undefined;
-
-  
+  selection!: string;
+  criteria=''
+  addcities(city:string):void{
+    this.cities.push(city);
+  }
    
+
     onCityClick(city: string): void {
-      this.seletion =city;
+      this.selection =city;
     }
 
     onClear(): void{
-      this.seletion = '';
+      this.selection = '';
     }
+
+
 
 }

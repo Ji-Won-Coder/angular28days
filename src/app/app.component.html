@@ -1,17 +1,11 @@
-<!--<p>{{title}} con tu papito</p>-->
 
-
-<!--<p *ngIf="name"> mi nombre es: {{name}}</p>-->
-<!--<input type="text" [(ngModel)]="name">-->
-
-<ul >
-  <li *ngFor="let city of cities" (click)="onCityClick(city)" [ngClass]="{'selected': city === seletion}">{{city}}</li>>
-</ul>
-
-<div *ngIf="seletion">
-  <p >your city is {{seletion}}</p>
-  <app-button (click)="onClear" 
-  [color]="'cornflowerblue'" [label]="'clear your selection'"[seletion]='seletion'></app-button>
-
-  <!--  <button (click)="onClear()"> clear your selection</button>-->
+  <div class="col-12">
+    <app-navbar></app-navbar>
+  </div> 
+<div class="container">
+<div class="row">
+  <div class="col-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 </div>

@@ -1,0 +1,38 @@
+
+<h1>お問い合わせフォーム {{name}}</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <div class="mb-4">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name"   formControlName="name" required>
+       <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required'] " class="alert alert-primary" role="alert">このフィールドは必須です</div>
+       
+       <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['minlength'] " class="alert alert-primary" role="alert">名前には少なくとも {{contactForm.get('name')?.errors?.['minlength'].requiredLength}} 文字 </div>
+    </div>
+    <div class="mb-4 form-check">
+        <label form="checkAdult" class="form-label">Are you over 18 years of age?</label>
+        <input type="checkbox" class="form-check-input" id="checkAdult" name="checkAdult"    formControlName="checkAdult" required >
+        <div *ngIf="contactForm.get('checkAdult')?.touched && contactForm.get('checkAdult')?.errors?.['required'] " class="alert alert-primary" role="alert">このフィールドは必須です</div>
+    </div>
+    <div class="mb-4">
+        <label for="departament" class="form-label">Departament</label>
+       <select name="departament" id="departament" class="form-select form-select-sm"  formControlName="departament">
+        <option selected>Open this select menu</option>
+        <option value="marketing">Marketing</option>
+        <option value="commercial">Commercial</option>
+        <option value="Systems">Tics1</option>
+        <option value="Rating">Tics2</option>
+        <option value="Diagramming">Diagramming</option>
+        <option value="HumanManagement">Gestion Humana</option>
+       </select>
+    </div>
+    <div class="mb-4">
+        <label for="comments" class="form-label">Comment</label>
+        <textarea class="form-control" name="comments" id="comments" cols="20" rows="5" placeholder="leave a comments..."   formControlName="comments" required></textarea>
+        <div *ngIf="contactForm.get('comments')?.touched && contactForm.get('comments')?.errors?.['required'] " class="alert alert-primary" role="alert">このフィールドは必須です</div>
+        <!--<div  [hidden]="comments.valid || comments.pristine"  class="alert alert-primary" role="alert">This fiel is requered</div>-->        
+          <div class="d-grid gap-2 col-4 float-end">
+            <button type="submit" class="btn btn-info btn-lg"  [disabled]="contactForm.invalid">Send</button>
+        </div>
+    </div>
+</form>
+
