@@ -16,6 +16,8 @@ import { ContactReactiveComponent } from './contact-reactive/contact-reactive.co
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { DetailsComponent } from './Users/details/details.component';
+import { UserComponent } from './Users/user/user.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     HomeComponent,
     NavbarComponent,
     PagenotfoundComponent,
+    DetailsComponent,
+    UserComponent,
    
   ],
   imports: [
